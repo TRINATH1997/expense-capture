@@ -1,0 +1,39 @@
+:host ::ng-deep {
+  .expense_form {
+    width: 60%;
+    margin: auto;
+ }
+  .expense_header {
+    text-align: center;
+
+    .header_text {
+      position: relative;
+    }
+  }
+}
+
+.expense_list {
+  width: 60%;
+  margin: 2rem auto;
+  position: relative;
+
+  label {
+    font-weight: bold;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin: 5px 0px;
+  }
+
+  span.value {
+    font-size: 14px;
+    margin: 15px 0px;
+    color: #000;
+    font-weight: 400;
+  }
+
+  .btn-delete {
+    position: absolute;
+    right: 10px;
+  }
+}

@@ -1,0 +1,54 @@
+.form-group {
+    height: 75px;
+
+    label {
+        padding-bottom: 5px;
+
+        span {
+            color: red;
+            font-weight: bolder;
+        }
+    }
+}
+
+.form-group-desc {
+    height: 100px;
+
+    label {
+        padding-bottom: 5px;
+        color: #1b2f54;
+
+        span {
+            color: red;
+            font-weight: bolder;
+        }
+    }
+}
+
+.submit {
+    margin-right: 10px;
+}
+
+.submit:hover {
+    margin-right: 10px;
+}
+
+.text_right {
+    text-align: right;
+}
+
+.error_msg {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    display: block;
+}
+
+.success_msg {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    display: block;
+}

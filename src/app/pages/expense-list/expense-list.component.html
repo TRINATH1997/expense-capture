@@ -1,0 +1,47 @@
+<nb-card class="expense_form" accent="primary">
+  <nb-card-header class="expense_header">
+    <span class="header_text"> Add Expense </span>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="form_container">
+      <app-add-expense></app-add-expense>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<nb-card class="expense_list" *ngFor="let expense of expenseItems; index as i" status="success" accent="info">
+  <nb-card-header class="expense_header">
+    {{ expense.expenseType }} Expense added
+    <button nbButton status="danger" size="small" class="btn-delete" (click)="onDelete(i)">Delete</button>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Expense ID </label>
+        <span class="value">{{ expense.id }}</span>
+      </div>
+      <div class="col-md-6">
+        <label>Expense Name </label>
+        <span class="value">{{ expense.name }}</span>
+      </div>
+      <div class="col-md-6">
+        <label>Expense Type </label>
+        <span class="value">{{ expense.expenseType }}</span>
+      </div>
+      <div class="col-md-6">
+        <label>Expense Date </label>
+        <span class="value">{{ expense.expenseDate }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Expense Date </label>
+        <span class="value">{{ expense.description }}</span>
+      </div>
+      <div class="col-md-6">
+        <label>Expense Amount </label>
+        <span class="value">${{ expense.value }}</span>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

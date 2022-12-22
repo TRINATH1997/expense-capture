@@ -1,0 +1,113 @@
+<form [formGroup]="expenseForm" (ngSubmit)="addExpense(expenseForm)">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Employee ID <span>*</span></label>
+        <input
+          nbInput
+          fullWidth
+          class="form-control"
+          placeholder="Employee ID"
+          formControlName="id"
+          status="primary"
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Employee Name <span>*</span></label>
+        <input
+          nbInput
+          fullWidth
+          class="form-control"
+          placeholder="Employee Name"
+          formControlName="name"
+          status="primary"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group-desc">
+        <label>Expense Description <span>*</span></label>
+        <textarea
+          nbInput
+          fullWidth
+          placeholder="Description"
+          status="primary"
+          formControlName="description"
+        ></textarea>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>value <span>*</span></label>
+        <input
+          nbInput
+          fullWidth
+          class="form-control"
+          placeholder="Price"
+          (keypress)="keyPressNumbers($event)"
+          formControlName="value"
+          status="primary"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Expense Type <span>*</span></label>
+        <nb-select
+          fullWidth
+          placeholder="Expense Type"
+          formControlName="expenseType"
+          [(selected)]="selectedSubItem"
+          status="primary"
+        >
+          <nb-option
+            *ngFor="let item of expense_Sub_type"
+            [value]="item.name"
+            >{{ item.name }}</nb-option
+          >
+        </nb-select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Expense Date <span>*</span></label>
+        <input
+          nbInput
+          fullWidth
+          placeholder="Expense Date"
+          class="form-control"
+          formControlName="expenseDate"
+          status="primary"
+          [nbDatepicker]="dateTimePicker"
+        />
+        <nb-datepicker #dateTimePicker></nb-datepicker>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <span *ngIf="submitted" class="error_msg"
+        >** Please fill above fileds to add an Expense **</span
+      >
+      <span *ngIf="successMsg" class="success_msg"
+        >** Expense Submitted Successfully **</span
+      >
+    </div>
+    <div class="col-md-6 text_right">
+      <div class="btn_block">
+        <button nbButton status="primary" type="submit" class="submit">
+          Submit
+        </button>
+        <button nbButton (click)="onReset()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</form>
